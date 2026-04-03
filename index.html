@@ -1,0 +1,32 @@
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>QWEB-CLI - Cyber Terminal</title>
+    <link rel="stylesheet" href="css/cyber.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="prompt">[root@qweb-cli ~]#</div>
+        <div class="output" id="typewriter"></div>
+    </div>
+    <script>
+        const text = "Welcome to the QWEB-CLI Cyber Terminal. This is a secure, encrypted interface.";
+        let i = 0;
+        const typewriter = document.getElementById("typewriter");
+
+        function typeWriter() {
+            if (i < text.length) {
+                typewriter.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>
+```
