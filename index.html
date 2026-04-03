@@ -6,28 +6,20 @@
     <meta charset="UTF-8">
     <title>QWEB-CLI - Cyber Terminal</title>
     <link rel="stylesheet" href="css/cyber.css">
+    <script src="https://unpkg.com/xterm@4.30.0/lib/xterm.min.js"></script>
+    <script src="https://unpkg.com/xterm@4.30.0/addons/fit/xterm-fit.min.js"></script>
+    <script src="https://unpkg.com/xterm@4.30.0/addons/fullscreen/xterm-fullscreen.min.js"></script>
 </head>
 <body>
-    <div class="terminal">
-        <div class="prompt">[root@qweb-cli ~]#</div>
-        <div class="output" id="typewriter"></div>
-        <div class="footer">Press ESC to exit</div>
+    <div class="container">
+        <div class="ide-container">
+            <div id="editor"></div>
+        </div>
+        <div class="terminal-container">
+            <div id="terminal"></div>
+        </div>
     </div>
-    <script>
-        const text = "Welcome to the QWEB-CLI Cyber Terminal. This is a secure, encrypted interface.";
-        let i = 0;
-        const typewriter = document.getElementById("typewriter");
-
-        function typeWriter() {
-            if (i < text.length) {
-                typewriter.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-
-        typeWriter();
-    </script>
+    <script src="js/init.js"></script>
 </body>
 </html>
 ```
